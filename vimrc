@@ -26,16 +26,20 @@ Plug 'mbbill/undotree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/AutoComplPop'
+Plug 'sickill/vim-monokai'
 
 call plug#end()
 
+colorscheme monokai
 set background=dark
 
 let mapleader = " "
 let g:netrw_browse_split = 2
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
-let g:airline_theme='base16'
+let g:airline_theme='molokai'
+let g:airline_powerline_fonts = 1
+set t_Co=256
 
 
 nnoremap <leader>h :wincmd h<CR>
