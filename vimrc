@@ -12,9 +12,12 @@ set nobackup
 set undodir=~/.vim/undodir
 set undofile
 set incsearch
+set cursorline
+set autoindent
 
 set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=lightgrey
+highlight ColorColumn ctermbg=0 guibg=lightgray
+highlight clear CursorLine 
 
 call plug#begin('~/.vim/plugged')
 
@@ -26,19 +29,23 @@ Plug 'mbbill/undotree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/AutoComplPop'
-Plug 'sickill/vim-monokai'
+" Plug 'sickill/vim-monokai'
 Plug 'preservim/nerdtree'
+Plug 'morhetz/gruvbox'
+" Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
 
-colorscheme monokai
+" colorscheme monokai
+" colorscheme solarized
+colorscheme gruvbox
 set background=dark
 
 let mapleader = " "
 let g:netrw_browse_split = 2
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
-let g:airline_theme='molokai'
+let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts = 1
 set t_Co=256
 
