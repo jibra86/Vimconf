@@ -29,16 +29,12 @@ Plug 'mbbill/undotree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/AutoComplPop'
-" Plug 'sickill/vim-monokai'
 Plug 'preservim/nerdtree'
-" Plug 'morhetz/gruvbox'
-" Plug 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
 
-" colorscheme monokai
 " colorscheme solarized
-" colorscheme gruvbox
 set background=dark
 
 let mapleader = " "
@@ -60,5 +56,7 @@ nnoremap <Leader>ps :Rg<SPACE>
 nnoremap <Leader>.. :NERDTree <bar> :vertical resize 30<CR>
 nnoremap <silent> <Leader>+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
+nnoremap <Leader>sv :vertical split <CR>
+nnoremap <Leader>sh :split <CR>
 
 
