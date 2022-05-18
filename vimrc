@@ -1,5 +1,7 @@
 syntax on
 
+set nocompatible
+filetype plugin on
 set relativenumber
 set noerrorbells
 set tabstop=4 softtabstop=4
@@ -31,6 +33,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/AutoComplPop'
 Plug 'preservim/nerdtree'
 Plug 'altercation/vim-colors-solarized'
+Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
@@ -59,4 +62,6 @@ nnoremap <silent> <Leader>- :vertical resize -5<CR>
 nnoremap <Leader>sv :vertical split <CR>
 nnoremap <Leader>sh :split <CR>
 
+let g:vimwiki_list = [{'path': '~/Documents/notes/'}]
+             " 'syntax': 'markdown', 'ext': '.md'}]
 
