@@ -16,6 +16,9 @@ set undofile
 set incsearch
 set cursorline
 set autoindent
+set showcmd
+set so=999
+set laststatus=2
 
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgray
@@ -72,9 +75,6 @@ command! MakeTags !ctags -R .
 
 " The Leader Key:
 let mapleader = " "
-let g:netrw_browse_split = 2
-let g:netrw_banner = 0
-let g:netrw_winsize = 25
 
 " FILE BROWSING:
 let g:netrw_banner=0        " disable annoying banner
@@ -106,10 +106,11 @@ nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>ss :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <Leader>ps :Rg<SPACE>
-nnoremap <Leader>.. :NERDTree <bar> :vertical resize 30<CR>
 nnoremap <silent> <Leader>+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
-nnoremap <Leader>sv :vertical split <CR>
-nnoremap <Leader>sh :split <CR>
-
+nnoremap <Leader>vs :vertical split <CR>
+nnoremap <Leader>hs :split <CR>
+nnoremap <Leader>bn :bnext <CR>
+nnoremap <Leader>bp :bprevious <CR>
+nnoremap <Leader>bd :bdelete <CR>
 
