@@ -34,6 +34,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/AutoComplPop'
 Plug 'vimwiki/vimwiki'
+Plug 'junegunn/goyo.vim'
+Plug 'preservim/vim-pencil'
 
 call plug#end()
 
@@ -67,7 +69,12 @@ nnoremap <Leader>hs :split <CR>
 nnoremap <Leader>nb :bnext <CR>
 nnoremap <Leader>pb :bprevious <CR>
 nnoremap <Leader>db :bdelete <CR>
+nnoremap <Leader>pdf :silent !mupdf *.pdf &<CR>
+nnoremap <Leader>tpdf :!pdflatex *.tex<CR>
 nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>3jwf>a
+nnoremap ,ptex :-1read $HOME/.vim/.skeleton.tex<CR>4jwwf>a
+nnoremap ,btex :-1read $HOME/.vim/.skeleton2.tex<CR>4jwwf>a
+
 
 " The vimwiki
 let g:vimwiki_list = [{'path': '~/Documents/notes/'}]
@@ -77,9 +84,3 @@ let g:vimwiki_list = [{'path': '~/Documents/notes/'}]
 " Search down into subfolders
 " Provides tab-completion for all file-related tasks
 set path+=**
-
-" Vim Cursor
-" Normal mode -> Block
-" insert mode -> Beam
-let &t_SI = "\e[6 q"
-let &t_EI = "\e[2 q"

@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/jibran/.vim'
+let g:netrw_dirhist_5='/home/jibran/Documents/Study/Courses/4rthSemester/Research_Methods/finalsStudy/lecture2'
+let g:netrw_dirhist_4='/home/jibran/Documents/Study/Courses/4rthSemester/Research_Methods/finalsStudy'
+let g:netrw_dirhist_3='/home/jibran/Documents/Study/Courses/4rthSemester/Research_Methods/finalsStudy/lecture1'
+let g:netrw_dirhist_2='/home/jibran/Documents/Study/Courses/4rthSemester/Research_Methods/finalsStudy'
+let g:netrw_dirhist_1='/home/jibran/Documents/Courses/Latex/tutorial-08'
+let g:netrw_dirhist_0='/home/jibran/Documents/Courses/Latex'
+let g:netrw_dirhist_9='/home/jibran/Documents/Courses/Latex/tutorial-08'
+let g:netrw_dirhist_8='/home/jibran/Documents/Courses/Latex'
+let g:netrw_dirhist_7='/home/jibran/Documents/Courses/Latex/tutorial-08'
