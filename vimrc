@@ -18,29 +18,28 @@ set incsearch
 set cursorline
 set autoindent
 set wildmenu
+set termguicolors
 
 set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=lightgray
-highlight clear CursorLine 
 
 " Plugins
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
-Plug 'vim-utils/vim-man'
 Plug 'mbbill/undotree'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-scripts/AutoComplPop'
 Plug 'vimwiki/vimwiki'
-Plug 'junegunn/goyo.vim'
+Plug 'SilentGlasses/colorhighlighter'
 Plug 'preservim/vim-pencil'
+Plug 'junegunn/goyo.vim'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
-
 set background=dark
+colorscheme gruvbox
+
+" Transparency
+autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
 
 " Leader Key
 let mapleader = " "
@@ -49,8 +48,6 @@ let mapleader = " "
 let g:netrw_browse_split = 2
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
-let g:airline_theme='ayu_mirage'
-let g:airline_powerline_fonts = 1
 set t_Co=256
 
 " Keymaps
@@ -71,16 +68,21 @@ nnoremap <Leader>pb :bprevious <CR>
 nnoremap <Leader>db :bdelete <CR>
 nnoremap <Leader>pdf :silent !mupdf *.pdf &<CR>
 nnoremap <Leader>tpdf :!pdflatex *.tex<CR>
+nnoremap <Leader>hc :ColorHighlightEnable <CR>
 nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>3jwf>a
 nnoremap ,ptex :-1read $HOME/.vim/.skeleton.tex<CR>4jwwf>a
 nnoremap ,btex :-1read $HOME/.vim/.skeleton2.tex<CR>4jwwf>a
 
+" Notes
+nnoremap <Leader>cc :e /media/data/Uni-Stuff/Semester7/compiler-construction/notes/notes.wiki<CR>
+
+" My Todos
+nnoremap <Leader>td :e ~/todo/todo.wiki<CR>
 
 " The vimwiki
-let g:vimwiki_list = [{'path': '~/Documents/notes/'}]
-             " 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_list = [
+            \ {'path': '~/Documents/notes/', 'syntax': 'markdown', 'ext': '.md'},
+            \ {'path': '~Documents/notes/', 'syntax': 'default', 'ext': '.wiki'}
+            \ ]
 
-
-" Search down into subfolders
-" Provides tab-completion for all file-related tasks
 set path+=**
