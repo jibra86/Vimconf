@@ -24,7 +24,6 @@ set colorcolumn=80
 
 " Plugins
 call plug#begin('~/.vim/plugged')
-
 Plug 'tpope/vim-commentary'
 Plug 'mbbill/undotree'
 Plug 'vimwiki/vimwiki'
@@ -32,7 +31,10 @@ Plug 'SilentGlasses/colorhighlighter'
 Plug 'preservim/vim-pencil'
 Plug 'junegunn/goyo.vim'
 Plug 'morhetz/gruvbox'
-
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 call plug#end()
 
 set background=dark
@@ -49,6 +51,52 @@ let g:netrw_browse_split = 2
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
 set t_Co=256
+
+" =====================
+" LSP SETUP (clangd)
+" =====================
+if executable('clangd')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'clangd',
+        \ 'cmd': {server_info->['clangd']},
+        \ 'allowlist': ['c', 'cpp'],
+        \ })
+endif
+
+" Python LSP (pyright)
+if executable('/usr/local/bin/pyright-langserver')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyright',
+        \ 'cmd': {server_info->['pyright-langserver', '--stdio']},
+        \ 'allowlist': ['python'],
+        \ })
+endif
+
+" LSP settings
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_diagnostics_virtual_text_enabled = 1
+let g:lsp_diagnostics_highlights_enabled = 1
+let g:lsp_document_highlight_enabled = 1
+let g:lsp_inlay_hints_enabled = 1
+let g:asyncomplete_auto_popup = 1
+let g:asyncomplete_auto_completeopt = 1
+
+" LSP Keymaps
+function! s:on_lsp_buffer_enabled() abort
+    nnoremap <buffer> gd <plug>(lsp-definition)
+    nnoremap <buffer> K  <plug>(lsp-hover)
+    nnoremap <buffer> <leader>rn <plug>(lsp-rename)
+    nnoremap <buffer> <leader>ca <plug>(lsp-code-action)
+    nnoremap <buffer> <leader>e  <plug>(lsp-document-diagnostics)
+    nnoremap <buffer> [g <plug>(lsp-previous-diagnostic)
+    nnoremap <buffer> ]g <plug>(lsp-next-diagnostic)
+endfunction
+
+augroup lsp_install
+    au!
+    au User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
 
 " Keymaps
 nnoremap <leader>h :wincmd h<CR>

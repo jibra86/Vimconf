@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/media/data/Course/python-runestone/Exercise-2.13'
+let g:netrw_dirhist_2='/home/jibran'
 let g:netrw_dirhist_1='/home/jibran/dotfiles'
 let g:netrw_dirhist_0='/home/jibran/dotfiles/dwl-dotfiles'
 let g:netrw_dirhist_9='/home/jibran/dotfiles/dwl-dotfiles/dwl'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_7='/home/jibran/dotfiles/dwl-dotfiles/dwl'
 let g:netrw_dirhist_6='/media/data/Course/Cyber-Security/notes/Chapter1'
 let g:netrw_dirhist_5='/media/data/Course/Cyber-Security/notes'
 let g:netrw_dirhist_4='/media/data/Uni-Stuff/Semester7/compiler-construction/notes/notes'
-let g:netrw_dirhist_3='/media/data/Course/Cyber-Security/notes'
-let g:netrw_dirhist_2='/home/jibran/.vim'
