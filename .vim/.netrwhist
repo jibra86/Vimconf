@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =9
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/home/jibran'
+let g:netrw_dirhist_1='/media/data/Novel/ToWrite/Arcs/2. Sorcery'
+let g:netrw_dirhist_0='/media/data/Novel/ToWrite/Arcs/1. In Search of a Sword'
 let g:netrw_dirhist_9='/home/jibran/Git/desktop/myDWM/st-0.9.3'
 let g:netrw_dirhist_8='/home/jibran/.dwm'
 let g:netrw_dirhist_7='/home/jibran/Git/desktop/myDWM/dmenu-5.4'
@@ -7,6 +10,3 @@ let g:netrw_dirhist_6='/home/jibran/Git/desktop/myDWM'
 let g:netrw_dirhist_5='/home/jibran/Git/desktop/myDWM/dwm-6.8'
 let g:netrw_dirhist_4='/home/jibran/Git/desktop/myDWM/dwm-6.8/patches'
 let g:netrw_dirhist_3='/home/jibran/Git/desktop/myDWM/dwm-6.8'
-let g:netrw_dirhist_2='/home/jibran/Git/desktop/myDWM'
-let g:netrw_dirhist_1='/home/jibran/Git/desktop/myDWM/dwm-6.3'
-let g:netrw_dirhist_0='/home/jibran/Downloads/dwm-6.8'
